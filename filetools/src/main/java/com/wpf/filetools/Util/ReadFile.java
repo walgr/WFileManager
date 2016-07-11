@@ -1,4 +1,4 @@
-package com.wpf.utils.Utils;
+package com.wpf.filetools.Util;
 
 import java.io.BufferedReader;
 import java.io.IOException;

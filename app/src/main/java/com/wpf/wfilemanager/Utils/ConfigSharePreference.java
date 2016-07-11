@@ -1,4 +1,4 @@
-package com.app.wpf.wfilemanager.Utils;
+package com.wpf.wfilemanager.Utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

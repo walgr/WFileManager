@@ -1,4 +1,4 @@
-package com.app.wpf.wfilemanager.Adapter;
+package com.wpf.wfilemanager.Adapter;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
@@ -13,9 +13,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.wpf.filetools.Util.FileInfo;
-import com.app.wpf.wfilemanager.R;
-import com.app.wpf.wfilemanager.Utils.Get;
+import com.wpf.filetools.Util.FileInfo;
+import com.wpf.wfilemanager.R;
+import com.wpf.wfilemanager.Utils.Get;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

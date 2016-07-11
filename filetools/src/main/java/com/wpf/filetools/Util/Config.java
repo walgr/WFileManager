@@ -1,4 +1,4 @@
-package com.app.wpf.filetools.Util;
+package com.wpf.filetools.Util;
 
 /**
  * Created by 王朋飞 on 6-27-0027.

@@ -1,12 +1,12 @@
-package com.app.wpf.wfilemanager;
+package com.wpf.wfilemanager;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-import com.app.wpf.filetools.Util.Config;
-import com.app.wpf.wfilemanager.Utils.ConfigSharePreference;
+import com.wpf.filetools.Util.Config;
+import com.wpf.wfilemanager.Utils.ConfigSharePreference;
 
 public class SetActivity extends AppCompatActivity implements
     Switch.OnCheckedChangeListener {

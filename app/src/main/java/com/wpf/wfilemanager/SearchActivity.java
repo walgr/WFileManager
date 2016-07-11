@@ -1,4 +1,4 @@
-package com.app.wpf.wfilemanager;
+package com.wpf.wfilemanager;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.wpf.utils.FileFilter;
+package com.wpf.filetools.FileFilter;
 
 
 import java.io.File;

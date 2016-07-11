@@ -1,4 +1,4 @@
-package com.app.wpf.wfilemanager;
+package com.wpf.wfilemanager;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,16 +23,17 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.app.wpf.filetools.Handler.SendMessage;
-import com.app.wpf.filetools.Util.Config;
-import com.app.wpf.filetools.Util.FileInfo;
-import com.app.wpf.filetools.FileScanThread;
-import com.app.wpf.wfilemanager.Adapter.FileListAdapter;
-import com.app.wpf.wfilemanager.Permission.PermissionList;
-import com.app.wpf.wfilemanager.Utils.ConfigSharePreference;
-import com.socks.library.KLog;
-import com.wpf.utils.FileCoryThread;
-import com.wpf.utils.FileUtils;
+import com.wpf.filetools.FileCoryThread;
+import com.wpf.filetools.FileScanThread;
+import com.wpf.filetools.FileUtils;
+import com.wpf.filetools.Util.Config;
+import com.wpf.filetools.Util.FileInfo;
+import com.wpf.filetools.Util.SendMessage;
+import com.wpf.wfilemanager.Adapter.FileListAdapter;
+import com.wpf.wfilemanager.Permission.PermissionList;
+import com.wpf.wfilemanager.SearchActivity;
+import com.wpf.wfilemanager.SetActivity;
+import com.wpf.wfilemanager.Utils.ConfigSharePreference;
 import com.wpf.requestpermission.RequestPermission;
 
 import java.io.File;
@@ -83,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements
                 invalidateOptionsMenu();
                 return true;
             } else {
-                KLog.e("长按错误");
                 return false;
             }
         }
@@ -141,7 +141,6 @@ public class MainActivity extends AppCompatActivity implements
                 @Override
                 public void onFail(String[] strings) {
                     isFail = true;
-                    KLog.d("用户拒绝");
                 }
             };
     }
@@ -234,19 +233,18 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void copy() {
-        copyFileList = getCoayFile();
+        copyFileList = getCopyFile();
         clearSelectAll();
         isCopy = true;
     }
 
     private void push() {
         new FileCoryThread(copyFileList,curPath,isClip) {
-
             @Override
             public void onFinish(boolean success) {
                 SendMessage.send(handler,0x03,null,0,0);
             }
-        }.start();
+        };
     }
 
     private void pushFinish() {
@@ -256,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements
         button_Add.setVisibility(View.INVISIBLE);
     }
 
-    private List<File> getCoayFile() {
+    private List<File> getCopyFile() {
         List<File> files = new ArrayList<>();
         for(int i = 0;i<longClickList.length;++i) {
             if(longClickList[i]) files.add(new File(curFileList.get(i).filePath));
@@ -282,10 +280,10 @@ public class MainActivity extends AppCompatActivity implements
             }
 
             @Override
-            public void onFinish() {
-                SendMessage.send(handler,0x02,getFileInfoList(),0,0);
+            public void onFinish(List<FileInfo> fileInfoList) {
+                SendMessage.send(handler,0x02,fileInfoList,0,0);
             }
-        }.start();
+        };
     }
 
     private void notifyList(List<FileInfo> fileInfos) {

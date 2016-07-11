@@ -1,4 +1,4 @@
-package com.wpf.utils.Extract;
+package com.wpf.filetools.Extract;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-package com.app.wpf.filetools.Util;
+package com.wpf.filetools.Util;
 
 import java.util.Date;
 

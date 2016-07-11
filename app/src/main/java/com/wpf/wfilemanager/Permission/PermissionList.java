@@ -1,4 +1,4 @@
-package com.app.wpf.wfilemanager.Permission;
+package com.wpf.wfilemanager.Permission;
 
 import android.Manifest;
 

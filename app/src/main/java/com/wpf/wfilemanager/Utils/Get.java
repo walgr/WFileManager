@@ -1,10 +1,10 @@
-package com.app.wpf.wfilemanager.Utils;
+package com.wpf.wfilemanager.Utils;
 
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 
-import com.app.wpf.wfilemanager.R;
+import com.wpf.wfilemanager.R;
 
 import java.text.DecimalFormat;
 
